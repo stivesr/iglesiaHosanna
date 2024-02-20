@@ -9,10 +9,6 @@ class Church extends Model
 {
     use HasFactory;
 
-    protected $table = 'churches';
-
-    protected $primaryKey = 'idChurch';
-
     protected $fillable = [
         'identification',
         'name',

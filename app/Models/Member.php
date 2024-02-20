@@ -9,10 +9,6 @@ class Member extends Model
 {
     use HasFactory;
 
-    protected $table = 'members';
-
-    protected $primaryKey = 'idMember';
-
     protected $fillable = [
         'identification',
         'firstName',
@@ -28,5 +24,5 @@ class Member extends Model
     {
         return $this->belongsTo(Church::class, 'idChurch');
     }
-    
+
 }
