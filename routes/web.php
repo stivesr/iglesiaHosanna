@@ -24,6 +24,6 @@ Route::get('/', function () {
 */
 
 Route::get('/churchHome', [ChurchController::class, 'home' ])->name('church.home');
-Route::get('/churchCreate', [ChurchController::class, 'create' ])->name('church.create');
+Route::get('/churchCreate', [ChurchController::class, 'createView' ])->name('church.create');
 
 Route::post('/churchCreate', [ChurchController::class, 'create'])->name('church.create');

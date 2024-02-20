@@ -12,6 +12,11 @@ class ChurchController extends Controller
     {
         return view('churchHome'); 
     }
+
+    public function createView(){
+        return view('churchCreate');
+    }
+
     public function create(Request $request)
     {
         $church = new Church;
@@ -23,7 +28,6 @@ class ChurchController extends Controller
         $church->save();
         return redirect()->route('/churchHome');
 
-        return view('churchCreate');
     }
 
     public function read()
