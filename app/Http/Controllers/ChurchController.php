@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Church;
 
 class ChurchController extends Controller
 {
@@ -11,10 +12,18 @@ class ChurchController extends Controller
     {
         return view('churchHome'); 
     }
-    public function create()
+    public function create(Request $request)
     {
-        // LOGICA METER LOS DATOS EN LA BASE DE DATOS
-        return view('/churchCreate'); 
+        $church = new Church;
+        $church->identification = $request->input('Identification');
+        $church->name = $request->input('name');
+        $church->location = $request->input('location');
+        $church->phone = $request->input('phone');
+        $church->email = $request->input('email');
+        $church->save();
+       return redirect()->route('/churchHome');
+        //return redirect()->route('confirmacion')->with('success', 'Los datos se han guardado correctamente.');
+        
     }
 
     public function read()

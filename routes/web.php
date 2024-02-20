@@ -23,3 +23,5 @@ Route::get('/churchHome', [ChurchController::class, 'home' ]);
 
 // CAMBIAR RUTA
 Route::get('/churchCreate', [ChurchController::class, 'create' ]);
+
+Route::post('/churchCreate', [ChurchController::class, 'create'])->name('churchCreate');
