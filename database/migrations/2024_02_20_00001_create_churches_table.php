@@ -12,14 +12,15 @@ return new class extends Migration
     public function up()
     {
         Schema::create('churches', function (Blueprint $table) {
-            $table->increments('idChurch');
-            $table->integer('legalIdChurch');
-            $table->string('nameChurch', 45)->nullable();
-            $table->string('address', 45)->nullable();
-            $table->string('phone', 15);
-            $table->string('email', 45)->unique();
-            $table->integer('priest')->nullable()->unique();
+            $table->id('idChurch');
+            $table->string('identification')->unique();
+            $table->string('name')->nullable(false);
+            $table->string('location')->nullable(false);
+            $table->string('phone');
+            $table->string('email');
+
             $table->timestamps();
+            
         });
     }
 

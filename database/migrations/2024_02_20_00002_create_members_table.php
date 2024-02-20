@@ -13,7 +13,23 @@ return new class extends Migration
     {
         Schema::create('members', function (Blueprint $table) {
             $table->id('idMember');
+            $table->string('identification')->unique();
+            $table->string('firstName')->nullable(false);
+            $table->string('lastName')->nullable(false);
+            $table->date('birthdate');
+            $table->string('address');
+            $table->string('phone')->unique();
+            $table->string('email')->unique();
+            
             $table->timestamps();
+
+            $table->unsignedBigInteger('idChurch');
+
+            $table->foreign('idChurch')
+                ->references('idChurch')
+                ->on('churches')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 
