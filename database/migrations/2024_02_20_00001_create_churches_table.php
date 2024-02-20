@@ -12,13 +12,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('churches', function (Blueprint $table) {
-            $table->increments('idChurch')->primary();
+            $table->increments('idChurch');
             $table->integer('legalIdChurch');
             $table->string('nameChurch', 45)->nullable();
             $table->string('address', 45)->nullable();
             $table->string('phone', 15);
             $table->string('email', 45)->unique();
-            $table->string('priest')->nullable()->unique();
+            $table->integer('priest')->nullable()->unique();
             $table->timestamps();
         });
     }
