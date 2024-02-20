@@ -14,6 +14,7 @@ class ChurchController extends Controller
     }
     public function create(Request $request)
     {
+<<<<<<< HEAD
         $church = new Church;
         $church->identification = $request->input('Identification');
         $church->name = $request->input('name');
@@ -24,6 +25,9 @@ class ChurchController extends Controller
        return redirect()->route('/churchHome');
         //return redirect()->route('confirmacion')->with('success', 'Los datos se han guardado correctamente.');
         
+=======
+        return view('churchCreate'); 
+>>>>>>> 7b67ad357c7121925286c29d3f3b0797131bc320
     }
 
     public function read()

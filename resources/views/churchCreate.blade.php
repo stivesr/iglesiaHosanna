@@ -1,4 +1,4 @@
-@extends('layouts.CRUD')
+@extends('layouts.churchCRUD')
 
 @section('title', 'Create')
 
@@ -6,6 +6,7 @@
 
     <h1>Crear iglesia</h1>
 
+<<<<<<< HEAD
         <form action="{{ route('churchCreate') }}" method="post">
         @csrf
         
@@ -29,4 +30,6 @@
         <input type="submit" value="Enviar">
     </form>
 
+=======
+>>>>>>> 7b67ad357c7121925286c29d3f3b0797131bc320
 @endsection

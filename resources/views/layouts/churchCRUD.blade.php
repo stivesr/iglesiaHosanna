@@ -6,10 +6,12 @@
 
         <title>@yield('title')</title>
 
+        @vite(['resources/css/app.scss', 'resources/js/app.js'])
+
     </head>
     <body>
 
-        @include('partials.navigation')
+        @include('partials.navigationCRUD')
         
         @yield('content')
 
