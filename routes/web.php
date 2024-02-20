@@ -23,11 +23,7 @@ Route::get('/', function () {
 
 */
 
-
-Route::get('/churchCreate', [ChurchController::class, 'create' ]);
-
-Route::post('/churchCreate', [ChurchController::class, 'create'])->name('churchCreate');
-
-// Navegation
 Route::get('/churchHome', [ChurchController::class, 'home' ])->name('church.home');
 Route::get('/churchCreate', [ChurchController::class, 'create' ])->name('church.create');
+
+Route::post('/churchCreate', [ChurchController::class, 'create'])->name('church.create');

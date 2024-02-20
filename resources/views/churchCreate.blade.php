@@ -6,7 +6,7 @@
 
     <h1>Crear iglesia</h1>
 
-        <form action="{{ route('churchCreate') }}" method="post">
+        <form action="{{ route('church.create') }}" method="post">
         @csrf
         
         <label for="Identification">Cedula juridica:</label>
