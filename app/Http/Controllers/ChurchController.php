@@ -13,8 +13,7 @@ class ChurchController extends Controller
     }
     public function create()
     {
-        // LOGICA METER LOS DATOS EN LA BASE DE DATOS
-        return view('/churchCreate'); 
+        return view('churchCreate'); 
     }
 
     public function read()

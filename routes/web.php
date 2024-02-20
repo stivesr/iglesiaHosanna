@@ -15,11 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/* 
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/churchHome', [ChurchController::class, 'home' ]);
+*/
 
-// CAMBIAR RUTA
-Route::get('/churchCreate', [ChurchController::class, 'create' ]);
+// Navegation
+Route::get('/churchHome', [ChurchController::class, 'home' ])->name('church.home');
+Route::get('/churchCreate', [ChurchController::class, 'create' ])->name('church.create');
