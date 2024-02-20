@@ -6,14 +6,15 @@ use Illuminate\Http\Request;
 
 class ChurchController extends Controller
 {
-    public function index()
-    {
-        
-    }
 
+    public function home()
+    {
+        return view('churchHome'); 
+    }
     public function create()
     {
-        
+        // LOGICA METER LOS DATOS EN LA BASE DE DATOS
+        return view('/churchCreate'); 
     }
 
     public function read()

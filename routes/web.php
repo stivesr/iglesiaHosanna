@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ChurchController;
+use App\Models\Church;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/churchHome', [ChurchController::class, 'home' ]);
+
+// CAMBIAR RUTA
+Route::get('/churchCreate', [ChurchController::class, 'create' ]);
