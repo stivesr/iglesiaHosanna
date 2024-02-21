@@ -30,14 +30,28 @@ class ChurchController extends Controller
 
     }
 
+    public function readView(){
+        return view('churchRead');
+    }
+
     public function read()
     {
         
     }
 
+    public function updateView()
+    {
+        return view('churchUpdate');
+    }
+
     public function update()
     {
         
+    }
+
+    public function deleteView()
+    {
+        return view('churchDelete');
     }
 
     public function delete()
