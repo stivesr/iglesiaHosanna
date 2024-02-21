@@ -26,7 +26,7 @@ class ChurchController extends Controller
         $church->phone = $request->input('phone');
         $church->email = $request->input('email');
         $church->save();
-        return redirect()->route('/churchHome');
+        return redirect()->route('church.create');
 
     }
 
