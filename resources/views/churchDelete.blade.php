@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <h1>Eliminar iglesia</h1>
+    <h1 class="text-3xl font-bold">Eliminar iglesia</h1>
 
-
+    
 @endsection

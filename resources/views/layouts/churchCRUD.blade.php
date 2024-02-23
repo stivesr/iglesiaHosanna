@@ -1,19 +1,44 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>@yield('title')</title>
+<head>
 
-        @vite(['resources/css/app.scss', 'resources/js/app.js'])
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    </head>
-    <body>
+    <title>@yield('title')</title>
 
-        @include('partials.navigationCRUD')
-        
-        @yield('content')
+    @vite(['resources/css/app.scss', 'resources/js/app.js'])
 
-    </body>
+</head>
+
+<body>
+
+    <div class="flex">
+
+        <div class="bg-blue-900 text-white p-4 text-center">
+            <a href="{{ route('church.home') }}"
+                class="block px-4 py-2 rounded-md mb-2 hover:bg-white hover:text-blue-900">Home</a>
+            <a href="{{ route('church.create') }}"
+                class="block px-4 py-2 rounded-md mb-2 hover:bg-white hover:text-blue-900">Create</a>
+            <a href="{{ route('church.read') }}"
+                class="block px-4 py-2 rounded-md mb-2 hover:bg-white hover:text-blue-900">Read</a>
+            <a href="{{ route('church.update') }}"
+                class="block px-4 py-2 rounded-md mb-2 hover:bg-white hover:text-blue-900">Update</a>
+            <a href="{{ route('church.delete') }}"
+                class="block px-4 py-2 rounded-md mb-2 hover:bg-white hover:text-blue-900">Delete</a>
+        </div>
+
+        <div class="flex-1 p-4">
+            @yield('content')
+        </div>
+
+    </div>
+
+    <footer class="text-gray-400 text-center p-4">
+        <p>&copy; {{ date('Y') }} Hosanna Liberia. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+
 </html>
