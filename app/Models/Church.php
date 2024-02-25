@@ -9,6 +9,8 @@ class Church extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'idChurch';
+
     protected $fillable = [
         'identification',
         'name',
