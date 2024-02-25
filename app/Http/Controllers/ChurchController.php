@@ -31,22 +31,34 @@ class ChurchController extends Controller
     }
 
     public function readView(){
-        return view('churchRead');
+
+        $churches = Church::all();
+
+        return view('churchRead', ['churches' => $churches]);
     }
 
-    public function read()
+    public function updateView($idChurch)
+    {
+        $church = Church::where('idChurch', $idChurch)->first();
+
+        return view('churchUpdate', ['church' => $church]);
+    }
+
+    public function edited(Request $request, $idChurch)
     {
         
-    }
+        $church = Church::where('idChurch', $idChurch)->first();
+        $church->identification = $request->input('Identification');
+        $church->name = $request->input('name');
+        $church->location = $request->input('location');
+        $church->phone = $request->input('phone');
+        $church->email = $request->input('email');
+        $church->update();
 
-    public function updateView()
-    {
-        return view('churchUpdate');
-    }
+        session()->flash('status', 'Church updated successfully');
 
-    public function update()
-    {
-        
+        return to_route('church.read');
+
     }
 
     public function deleteView()
@@ -58,4 +70,13 @@ class ChurchController extends Controller
     {
         
     }
+
+    public function eliminate($idChurch)
+    {
+        $church = Church::find($idChurch);
+        $church->delete();
+        session()->flash('status', 'Church deleted successfully');
+        return redirect()->route('church.read');
+    }
+
 }
