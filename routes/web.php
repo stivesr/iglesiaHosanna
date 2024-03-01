@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\ChurchController;
-use App\Models\Church;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,4 +22,4 @@ Route::get('/', function () {
 
 */
 
-Route::get('/churchHome', [ChurchController::class, 'home' ])->name('church.home');
+Route::get('/churchindex', [ChurchController::class, 'index' ])->name('church.index');

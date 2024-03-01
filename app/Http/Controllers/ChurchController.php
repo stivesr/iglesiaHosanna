@@ -11,7 +11,7 @@ class ChurchController extends Controller
      */
     public function index()
     {
-        //
+        return view('churchIndex');
     }
 
     /**
