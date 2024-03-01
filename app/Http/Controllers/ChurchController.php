@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Church;
 
 class ChurchController extends Controller
 {
@@ -11,7 +12,9 @@ class ChurchController extends Controller
      */
     public function index()
     {
-        return view('churchIndex');
+         $church = Church::first();
+
+         return view('churchIndex', compact('church'));
     }
 
     /**
@@ -27,7 +30,29 @@ class ChurchController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        // Validación de los campos del formulario
+        $validatedData = $request->validate([
+            'identification' => 'required|unique:churches',
+            'name' => 'required',
+            'location' => 'required',
+            'phone' => 'nullable',
+            'email' => 'nullable|email',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Ajusta las extensiones y el tamaño según tus necesidades
+        ]);
+
+        // Manejar la subida de la imagen
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('images', 'public');
+            $validatedData['image'] = $imagePath;
+        }
+
+        // Crear una nueva instancia del modelo Church con los datos validados
+        Church::create($validatedData);
+
+        // Redirigir a la vista o ruta deseada después de almacenar
+        return redirect()->route('nombre_de_la_ruta');
+
     }
 
     /**

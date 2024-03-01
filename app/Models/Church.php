@@ -17,6 +17,7 @@ class Church extends Model
         'location',
         'phone',
         'email',
+        'image',
     ];
 
     public function members()
