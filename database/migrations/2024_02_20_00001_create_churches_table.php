@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('location')->nullable(false);
             $table->string('phone');
             $table->string('email');
+            $table->string('image');
 
             $table->timestamps();
             
