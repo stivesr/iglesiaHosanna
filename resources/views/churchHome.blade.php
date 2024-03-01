@@ -1,13 +1,11 @@
-@extends('layouts.churchCRUD')
+@extends('layouts.churchMenu')
 
-@section('title', 'Home')
+@section('title', 'Inicio')
 
 @section('content')
 
     <h1 class="text-3xl font-bold">
         Iglesia Hosanna
     </h1>
-
-    <p>Este es el CRUD de Church</p>
 
 @endsection

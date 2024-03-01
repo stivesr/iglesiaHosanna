@@ -18,15 +18,7 @@
 
         <div class="bg-blue-900 text-white p-4 text-center">
             <a href="{{ route('church.home') }}"
-                class="block px-4 py-2 rounded-md mb-2 hover:bg-white hover:text-blue-900">Home</a>
-            <a href="{{ route('church.create') }}"
-                class="block px-4 py-2 rounded-md mb-2 hover:bg-white hover:text-blue-900">Create</a>
-            <a href="{{ route('church.read') }}"
-                class="block px-4 py-2 rounded-md mb-2 hover:bg-white hover:text-blue-900">Read</a>
-            <a href="{{ route('church.updateView') }}"
-                class="block px-4 py-2 rounded-md mb-2 hover:bg-white hover:text-blue-900">Update</a>
-            <a href="{{ route('church.delete') }}"
-                class="block px-4 py-2 rounded-md mb-2 hover:bg-white hover:text-blue-900">Delete</a>
+                class="block px-4 py-2 rounded-md mb-2 hover:bg-white hover:text-blue-900">Inicio</a>
         </div>
 
         <div class="flex-1 p-4">
