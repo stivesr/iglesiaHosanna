@@ -14,18 +14,14 @@
 
 <body>
 
-    <div class="flex">
-
-        <div class="bg-blue-900 text-white p-4 text-center">
-            <a href="{{ route('church.home') }}"
-                class="block px-4 py-2 rounded-md mb-2 hover:bg-white hover:text-blue-900">Inicio</a>
+        <div class="flex bg-blue-900 text-white p-4 text-center items-center justify-center">
+            <a href="{{ route('church.index') }}"
+                class="rounded-md px-6 py-2 m-2 hover:bg-white hover:text-blue-900">Inicio</a>
         </div>
 
-        <div class="flex-1 p-4">
+        <div class="p-4">
             @yield('content')
         </div>
-
-    </div>
 
     <footer class="text-gray-400 text-center p-4">
         <p>&copy; {{ date('Y') }} Hosanna Liberia. Todos los derechos reservados.</p>
